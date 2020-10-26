@@ -22,7 +22,7 @@ def index(request):
 def results(request):
     char_class = request.POST['char_class']
     char_class = CharClass.objects.get(pk=char_class)
-    level = request.POST['level']
+    level = int(request.POST['level'])
     num_char = int(request.POST['num_char'])
     characters = []
     for i in range(num_char):

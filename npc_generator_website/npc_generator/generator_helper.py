@@ -29,3 +29,12 @@ def ability_generator():
 # Function to generate the modifier score (bonus or penalty) for a given ability
 def mod_calculator(ability):
     return floor((ability-10)/2)
+
+# Function which takes in a description of the char_class's save ratio and the character's level and determines their base save
+def save_ratio(ratio, level):
+    if ratio == 'poor':
+        return floor(level * (1/3))
+    elif ratio == 'good':
+        return 2 + floor(level * 0.5)
+    else:
+        print('WTF')
