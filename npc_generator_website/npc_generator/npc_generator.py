@@ -20,6 +20,7 @@ class Character:
         self.weapon_proficiencies = char_class.weapon_proficiencies.listedweapon_set.all()
         self.hp = 0
         self.str = 10
+        self.str_mod = 0
         self.dex = 10
         self.con = 10
         self.int = 10
@@ -56,6 +57,7 @@ class Character:
         base = self.base_attack
         level = self.level
         str_mod = mod_calculator(self.str)
+        self.str_mod = str_mod
         dex_mod = mod_calculator(self.dex)
         self.base_attack = floor(base * level)
         self.melee_attack = self.base_attack + str_mod
