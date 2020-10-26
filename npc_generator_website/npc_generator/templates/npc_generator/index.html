@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/results/" method-="post">
+    <form action="{% url 'npc_generator:results' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Submit">

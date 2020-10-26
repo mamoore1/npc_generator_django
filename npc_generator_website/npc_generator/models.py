@@ -80,12 +80,29 @@ class ListedArmour(models.Model):
 
 
 class CharClass(models.Model):
-    name = models.CharField(max_length=20)
-    hit_dice = models.PositiveSmallIntegerField()
-    base_attack = models.FloatField()
-    fort_save_ratio = models.CharField(max_length=10)
+    name = models.CharField(max_length=20) # Name of character class
+    hit_dice = models.PositiveSmallIntegerField() # Dice to roll when determining HP
+    base_attack = models.FloatField()   #Character's base attack
+    fort_save_ratio = models.CharField(max_length=10) #A word describing how the character's saves scale with their level
     reflex_save_ratio = models.CharField(max_length=10)
     will_save_ratio = models.CharField(max_length=10)
+    STR = 1 # Defining the set of choices for top 3 ability scores
+    DEX = 2
+    CON = 3
+    INT = 4
+    WIS = 5
+    CHA = 6
+    ABILITY_CHOICES = (
+        (STR, 'Strength'),
+        (DEX, 'Dexterity'),
+        (CON, 'Constitution'),
+        (INT, 'Intelligence'),
+        (WIS, 'Wisdom'),
+        (CHA, 'Charisma'),
+    )
+    primary_ability = models.IntegerField(choices=ABILITY_CHOICES)
+    secondary_ability = models.IntegerField(choices=ABILITY_CHOICES)
+    tertiary_ability = models.IntegerField(choices=ABILITY_CHOICES)
     weapon_proficiencies = models.ForeignKey(WeaponProficiencyList, on_delete=models.PROTECT)
     armour_proficiencies = models.ForeignKey(ArmourProficiencyList, on_delete=models.PROTECT)
 
