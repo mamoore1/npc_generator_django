@@ -114,6 +114,7 @@ class Character:
         except IndexError:
             self.armour = None
 
+
     def update_ac(self):
         armour = self.armour
         dex_mod = mod_calculator(self.dex)
@@ -138,4 +139,5 @@ def character_generator(char_class, level):
     character.update_extra_attacks()
     character.update_hp()
     character.select_armour()
+    character.update_ac()
     return character

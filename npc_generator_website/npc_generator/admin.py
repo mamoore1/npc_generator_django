@@ -17,12 +17,20 @@ class ListedArmourInline(admin.TabularInline):
     extra = 3
 
 
+class ArmourAdmin(admin.ModelAdmin):
+    list_display = ('armour_name', 'armour_type', 'armour_ac', 'armour_max_dex')
+    list_filter = ['armour_type']
+
 class ArmourProfsAdmin(admin.ModelAdmin):
     inlines = [ListedArmourInline]
 
 
+class WeaponAdmin(admin.ModelAdmin):
+    list_display = ('weapon_name', 'weapon_type', 'weapon_mel_range')
+    list_filter = ['weapon_type']
+
 admin.site.register(CharClass)
 admin.site.register(WeaponProficiencyList, WeaponProfsAdmin)
-admin.site.register(Weapon)
+admin.site.register(Weapon, WeaponAdmin)
 admin.site.register(ArmourProficiencyList, ArmourProfsAdmin)
-admin.site.register(Armour)
+admin.site.register(Armour, ArmourAdmin)
