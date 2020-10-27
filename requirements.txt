@@ -3,10 +3,10 @@ certifi==2020.6.20
 dj-database-url==0.5.0
 Django==3.1.2
 gunicorn==20.0.4
-numpy @ file:///C:/ci/numpy_and_numpy_base_1596215850360/work
-psycopg2 @ file:///C:/ci/psycopg2_1594305172475/work
+numpy==1.19.1
+psycopg2==2.8.5
 pytz==2020.1
 six==1.15.0
-sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+sqlparse==0.4.1
 whitenoise==5.2.0
 wincertstore==0.2
