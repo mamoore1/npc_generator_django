@@ -1,1 +1,1 @@
-web: gunicorn npc_generator.wsgi --log-file -
+web: gunicorn npc_generator_website.wsgi --log-file -
