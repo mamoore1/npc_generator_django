@@ -1,0 +1,1 @@
+web: gunicorn npc_generator.wsgi --log-file -
