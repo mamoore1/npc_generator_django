@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.urls import include, path
 from django.contrib import admin
+from .views import redirect_root
 
 urlpatterns = [
     path(('npc_generator/'), include('npc_generator.urls')),
     path('admin/', admin.site.urls),
+    path('', redirect_root),
 ]
